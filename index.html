@@ -12,10 +12,11 @@
     <meta name="language" content="Spanish">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="stylesheet" href="style.css?=v2">
     <link rel="preload" as="font" href="fonts/Inter-UI-upright.var.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="fonts/Inter-UI.var.woff2" type="font/woff2" crossorigin="anonymous">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160821580-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -27,73 +28,100 @@
 
         gtag('config', 'UA-160821580-1');
     </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '250471212779289');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=250471212779289&ev=PageView&noscript=1"
+  /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 
 <body>
-    <div id="preloader">
-        <div class="spinner-border text-dark" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <div class="container text-center py-5">
-        <img class="img-home" src="covid-19.svg" alt="covid-19">
-        <h1 class="pt-3 mb-0">Información Covid-19</h1>
-        <span class="text-secondary" style="vertical-align: middle;">Datos actualizados sobre la población de España</span>
-        <div class="mt-1">
-            <a href="telefonos.html" class="mt-5">Teléfonos <i class="fas fa-mobile-alt"></i></a>
-            <a class="text-warning ml-3" href="informacion.html">Información <i class="fas fa-info-circle"></i></a>
-        </div>
 
+    <div id="loader">
+        <div class="spinner spinner1"></div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="card card-sm card-body flex-row align-items-center shadow">
-                    <img src="cough.svg" alt="" width="48px">
-                    <div class="ml-3">
-                        <h5 class="mb-0">Total infectados</h5>
-                        <span id="confirmed" class="h4 text-secondary" data-start="" data-end="" data-duration="3" data-grouping="false"></span>
+    <div id="particles-js"></div>
+    <div id="content" style="display:none">
+
+        <div class="container text-center pt-3 pb-4">
+            <img class="img-home" src="covid-19.svg" alt="covid-19">
+            <h1 class="pt-2 mb-0">Información Covid-19</h1>
+            <span class="text-secondary" style="vertical-align: middle;">Datos actualizados sobre la población de España</span>
+            <h5><span class="text-danger">#YoMe</span><span class="text-warning">Quedo</span><span class="text-danger">EnCasa</span></h5>
+            <div class="mt-1">
+                <a href="telefonos.html" class="mt-5">Teléfonos <i class="fas fa-mobile-alt"></i></a>
+                <a class="text-warning ml-3" href="informacion.html">Información <i class="fas fa-info-circle"></i></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="card card-sm card-body flex-row align-items-center shadow">
+                        <img src="cough.svg" alt="" width="48px">
+                        <div class="ml-3">
+                            <h5 class="mb-0">Total infectados</h5>
+                            <span id="confirmed" class="h4 text-secondary" data-start="" data-end="" data-duration="3" data-grouping="false"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card card-sm card-body flex-row align-items-center shadow">
+                        <img src="wound.svg" alt="" width="48px">
+                        <div class="ml-3">
+                            <h5 class="mb-0">Total recuperados</h5>
+                            <span id="recovered" class="h4 text-secondary" data-start="" data-end="" data-duration="3" data-grouping="false"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card card-sm card-body flex-row align-items-center shadow">
+                        <img src="death.svg" alt="" width="48px">
+                        <div class="ml-3">
+                            <h5 class="mb-0">Total fallecidos</h5>
+                            <span id="deaths" class="h4 text-secondary" data-start="" data-end="" data-duration="3" data-grouping="false"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="card card-sm card-body flex-row align-items-center shadow">
-                    <img src="wound.svg" alt="" width="48px">
-                    <div class="ml-3">
-                        <h5 class="mb-0">Total recuperados</h5>
-                        <span id="recovered" class="h4 text-secondary" data-start="" data-end="" data-duration="3" data-grouping="false"></span>
-                    </div>
-                </div>
+            <div class="text-center text-md-right pt-2 pt-md-0">
+                <p class="text-secondary">Actualizado <span id="time"></span></h6>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="card card-sm card-body flex-row align-items-center shadow">
-                    <img src="death.svg" alt="" width="48px">
-                    <div class="ml-3">
-                        <h5 class="mb-0">Total fallecidos</h5>
-                        <span id="deaths" class="h4 text-secondary" data-start="" data-end="" data-duration="3" data-grouping="false"></span>
-                    </div>
-                </div>
+            <div class="text-center d-none d-md-block fixed-bottom">
+                <p class="text-muted">© 2020 Creado por Javier Alarcón</p>
             </div>
-        </div>
-        <div class="text-center text-md-right pt-2 pt-md-0">
-            <p class="text-secondary">Última actualización <span id="time"></span></h6>
-        </div>
-        <!--<div class="text-center pb-4">
-            <a href="entretenimiento.html" class="btn btn-danger text-white py-2 px-3">Entretenimiento <i class="fas fa-tv ml-2"></i><i class="fas fa-gamepad ml-1" style="transform:rotate(-25deg)"></i></a>
-        </div>-->
-        <div class="text-center d-none d-md-block fixed-bottom bg-white">
-            <p class="text-muted">© 2020 Creado por Javier Alarcón</p>
-        </div>
-        <div class="text-center d-md-none">
-            <p class="text-muted">© 2020 Creado por Javier Alarcón</p>
-        </div>
+            <div class="text-center d-md-none pt-4">
+                <p class="text-muted">© 2020 Creado por Javier Alarcón</p>
+            </div>
 
+        </div>
     </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
-    <script src="plugin.js?v=16"></script>
+    <script src="particles.js"></script>
+    <script src="plugin.js?v=25"></script>
 </body>
 
 </html>

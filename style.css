@@ -19479,7 +19479,7 @@ screen and (-ms-high-contrast:none) {
     }
 }
 
-#preloader {
+#loader {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -19490,4 +19490,49 @@ screen and (-ms-high-contrast:none) {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.spinner {
+    width: 3rem;
+    height: 3rem;
+}
+
+.spinner.spinner1 {
+    border: 3px solid rgba(0, 0, 0, 0.8);
+    border-top-color: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    animation: rotation 0.8s ease infinite;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.abs {
+    position: absolute;
+}
+
+#particles-js canvas {
+    display: block;
+    vertical-align: bottom;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+    transition: opacity .8s ease, transform 1.4s ease
+}
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0
 }
